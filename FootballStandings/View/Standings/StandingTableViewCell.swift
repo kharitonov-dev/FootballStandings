@@ -20,25 +20,25 @@ final class StandingCell: UITableViewCell {
     
     private lazy var teamNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 22)
+        label.font = Constants.Fonts.titleFont
         return label
     }()
     
     private lazy var locationLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = Constants.Fonts.bigSecondaryFont
         return label
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = Constants.Fonts.bigSecondaryFont
         return label
     }()
     
     private lazy var statusLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = Constants.Fonts.secondaryFont
         return label
     }()
     
@@ -57,7 +57,7 @@ final class StandingCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(StatTableViewCell.self, forCellWithReuseIdentifier: "StatCell")
+        collectionView.register(StatTableViewCell.self, forCellWithReuseIdentifier: Constants.Standings.statCellIdentifier)
         collectionView.isUserInteractionEnabled = true
         collectionView.backgroundColor = UIColor.clear
         collectionView.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
@@ -70,7 +70,7 @@ final class StandingCell: UITableViewCell {
         teamNameLabel.text = model.team.displayName
         locationLabel.text = model.team.location
         descriptionLabel.text = model.note?.description
-        statusLabel.text = model.team.isActive ? "Active" : "Inactive"
+        statusLabel.text = model.team.isActive ? Constants.Standings.statusActive : Constants.Standings.statusActive
         statusLabel.textColor = model.team.isActive ? UIColor.green : UIColor.red
         descriptionLabel.isHidden = model.note?.description == nil
         stats = model.stats
@@ -99,17 +99,17 @@ final class StandingCell: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         let constraints = [
-            logo.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-            logo.widthAnchor.constraint(equalToConstant: 70),
+            logo.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.Standings.leftInset),
+            logo.widthAnchor.constraint(equalToConstant: Constants.Standings.logoWidth),
             logo.topAnchor.constraint(equalTo: topAnchor),
             logo.bottomAnchor.constraint(equalTo: statsView.topAnchor),
             
-            stackView.leftAnchor.constraint(equalTo: logo.rightAnchor, constant: 10),
+            stackView.leftAnchor.constraint(equalTo: logo.rightAnchor, constant: Constants.Standings.leftInset),
             stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 25),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.Standings.topInset),
             
             statsView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
-            statsView.heightAnchor.constraint(equalToConstant: 100),
+            statsView.heightAnchor.constraint(equalToConstant: Constants.Standings.statsHeight),
             statsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ]
         
@@ -123,7 +123,7 @@ extension StandingCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StatCell", for: indexPath) as? StatTableViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.Standings.statCellIdentifier, for: indexPath) as? StatTableViewCell
         cell?.configure(model: stats[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
@@ -131,7 +131,6 @@ extension StandingCell: UICollectionViewDataSource {
 
 extension StandingCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let statsSize = CGSize(width: 120, height: 100)
-        return statsSize
+        return Constants.Standings.statsSize
     }
 }

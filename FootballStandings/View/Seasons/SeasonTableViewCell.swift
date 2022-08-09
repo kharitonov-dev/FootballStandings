@@ -18,19 +18,19 @@ final class SeasonTableViewCell: UITableViewCell {
     
     private lazy var yearLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = Constants.Fonts.secondaryFont
         return label
     }()
     
     private lazy var startDateLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = Constants.Fonts.secondaryFont
         return label
     }()
     
     private lazy var endDateLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = Constants.Fonts.secondaryFont
         return label
     }()
     
@@ -70,18 +70,18 @@ final class SeasonTableViewCell: UITableViewCell {
         endDateLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let constraints = [
-            nameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-            nameLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 10),
+            nameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.Seasons.leftInset),
+            nameLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: Constants.Seasons.rightInset),
             nameLabel.heightAnchor.constraint(equalTo: heightAnchor),
             
-            yearLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-            yearLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            yearLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.Seasons.leftInset),
+            yearLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Constants.Seasons.bottomInset),
             
-            startDateLabel.leftAnchor.constraint(equalTo: yearLabel.rightAnchor, constant: 20),
-            startDateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            startDateLabel.leftAnchor.constraint(equalTo: yearLabel.rightAnchor, constant: Constants.Seasons.leftDateInset),
+            startDateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Constants.Seasons.bottomInset),
             
-            endDateLabel.leftAnchor.constraint(equalTo: startDateLabel.rightAnchor, constant: 20),
-            endDateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            endDateLabel.leftAnchor.constraint(equalTo: startDateLabel.rightAnchor, constant: Constants.Seasons.leftDateInset),
+            endDateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Constants.Seasons.bottomInset),
         ]
         
         NSLayoutConstraint.activate(constraints)

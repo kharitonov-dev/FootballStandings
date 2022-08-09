@@ -16,7 +16,7 @@ enum BuildNetworkRequest {
 extension BuildNetworkRequest: TargetType {
     
     var baseURL: URL {
-        guard let url = URL(string: Constants.BuildNetwork.baseURL) else { fatalError("baseURL error")}
+        guard let url = URL(string: Constants.Server.baseURL) else { fatalError("baseURL error")}
         return url
     }
     

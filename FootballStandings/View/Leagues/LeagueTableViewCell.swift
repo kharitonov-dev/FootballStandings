@@ -25,7 +25,7 @@ class LeagueTableViewCell: UITableViewCell {
     
     private lazy var abbrLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = Constants.Fonts.secondaryFont
         label.textColor = UIColor.gray
         return label
     }()
@@ -57,16 +57,16 @@ class LeagueTableViewCell: UITableViewCell {
         
         let constraints = [
             logo.heightAnchor.constraint(equalTo: heightAnchor),
-            logo.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-            logo.widthAnchor.constraint(equalToConstant: 50),
+            logo.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.Leagues.leftInset),
+            logo.widthAnchor.constraint(equalToConstant: Constants.Leagues.logoWidth),
             
-            nameLabel.leftAnchor.constraint(equalTo: logo.rightAnchor, constant: 10),
-            nameLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 10),
+            nameLabel.leftAnchor.constraint(equalTo: logo.rightAnchor, constant: Constants.Leagues.leftInset),
+            nameLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: Constants.Leagues.rightInset),
             nameLabel.topAnchor.constraint(equalTo: topAnchor),
             nameLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
 
-            abbrLabel.leftAnchor.constraint(equalTo: logo.rightAnchor, constant: 10),
-            abbrLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 10),
+            abbrLabel.leftAnchor.constraint(equalTo: logo.rightAnchor, constant: Constants.Leagues.leftInset),
+            abbrLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: Constants.Leagues.rightInset),
             abbrLabel.topAnchor.constraint(equalTo: centerYAnchor),
             abbrLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ]

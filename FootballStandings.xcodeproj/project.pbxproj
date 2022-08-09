@@ -57,9 +57,6 @@
 		8376D2B528A084AC0006B43B /* StandingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376D2B428A084AC0006B43B /* StandingsPresenter.swift */; };
 		8376D2B728A085A90006B43B /* StandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376D2B628A085A90006B43B /* StandingTableViewCell.swift */; };
 		8376D2B928A0865E0006B43B /* StatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376D2B828A0865E0006B43B /* StatTableViewCell.swift */; };
-		83FED71828A102E000BA9A9C /* ConstantsLeagues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FED71728A102E000BA9A9C /* ConstantsLeagues.swift */; };
-		83FED71A28A1032000BA9A9C /* ConstantsStandings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FED71928A1032000BA9A9C /* ConstantsStandings.swift */; };
-		83FED71C28A104D600BA9A9C /* ConstantsSeasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FED71B28A104D600BA9A9C /* ConstantsSeasons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,9 +112,6 @@
 		8376D2B428A084AC0006B43B /* StandingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsPresenter.swift; sourceTree = "<group>"; };
 		8376D2B628A085A90006B43B /* StandingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingTableViewCell.swift; sourceTree = "<group>"; };
 		8376D2B828A0865E0006B43B /* StatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTableViewCell.swift; sourceTree = "<group>"; };
-		83FED71728A102E000BA9A9C /* ConstantsLeagues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsLeagues.swift; sourceTree = "<group>"; };
-		83FED71928A1032000BA9A9C /* ConstantsStandings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsStandings.swift; sourceTree = "<group>"; };
-		83FED71B28A104D600BA9A9C /* ConstantsSeasons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsSeasons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +202,6 @@
 		8376D236289FDE4D0006B43B /* Leagues */ = {
 			isa = PBXGroup;
 			children = (
-				83FED71728A102E000BA9A9C /* ConstantsLeagues.swift */,
 				8376D23D289FE0690006B43B /* LeaguesView.swift */,
 				8376D22C289FCB490006B43B /* LeaguesViewController.swift */,
 				8376D234289FDE2B0006B43B /* LeagueTableViewCell.swift */,
@@ -272,7 +265,6 @@
 		8376D28528A06A7E0006B43B /* Seasons */ = {
 			isa = PBXGroup;
 			children = (
-				83FED71B28A104D600BA9A9C /* ConstantsSeasons.swift */,
 				8376D28628A06A910006B43B /* SeasonsView.swift */,
 				8376D28828A06ABE0006B43B /* SeasonsViewController.swift */,
 				8376D29928A06E180006B43B /* SeasonTableViewCell.swift */,
@@ -312,7 +304,6 @@
 		8376D29D28A082980006B43B /* Standings */ = {
 			isa = PBXGroup;
 			children = (
-				83FED71928A1032000BA9A9C /* ConstantsStandings.swift */,
 				8376D2A028A083340006B43B /* StandingsView.swift */,
 				8376D29E28A082AC0006B43B /* StandingsViewController.swift */,
 				8376D2B628A085A90006B43B /* StandingTableViewCell.swift */,
@@ -430,7 +421,6 @@
 				8376D24A289FF1A00006B43B /* BuildNetworkRequest.swift in Sources */,
 				8376D24C289FF3A30006B43B /* TargetType.swift in Sources */,
 				8376D2AE28A083EC0006B43B /* StandingLogo.swift in Sources */,
-				83FED71A28A1032000BA9A9C /* ConstantsStandings.swift in Sources */,
 				8376D2A628A0838F0006B43B /* Standings.swift in Sources */,
 				8376D243289FE3F10006B43B /* UIImageView.swift in Sources */,
 				8376D22D289FCB490006B43B /* LeaguesViewController.swift in Sources */,
@@ -447,13 +437,11 @@
 				8376D251289FF4A90006B43B /* HTTPTask.swift in Sources */,
 				8376D257289FF98D0006B43B /* RouterProtocol.swift in Sources */,
 				8376D248289FF0DD0006B43B /* APIManager.swift in Sources */,
-				83FED71C28A104D600BA9A9C /* ConstantsSeasons.swift in Sources */,
 				8376D2B728A085A90006B43B /* StandingTableViewCell.swift in Sources */,
 				8376D2A128A083340006B43B /* StandingsView.swift in Sources */,
 				8376D29428A06C7C0006B43B /* SeasonType.swift in Sources */,
 				8376D25B28A046AC0006B43B /* ResponseStatus.swift in Sources */,
 				8376D2B528A084AC0006B43B /* StandingsPresenter.swift in Sources */,
-				83FED71828A102E000BA9A9C /* ConstantsLeagues.swift in Sources */,
 				8376D23A289FDF6C0006B43B /* LeaguesPresenter.swift in Sources */,
 				8376D29828A06DAB0006B43B /* Seasons.swift in Sources */,
 				8376D259289FFB490006B43B /* NetworkResponse.swift in Sources */,

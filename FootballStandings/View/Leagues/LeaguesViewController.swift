@@ -18,7 +18,7 @@ class LeaguesViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        tableView.register(LeagueTableViewCell.self, forCellReuseIdentifier: ConstantsLeagues.Cell.cellIdentifier)
+        tableView.register(LeagueTableViewCell.self, forCellReuseIdentifier: Constants.Leagues.cellIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -26,10 +26,10 @@ class LeaguesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = ConstantsLeagues.Table.title
+        title = Constants.Leagues.title
         addSubviews()
         makeConstraints()
-        tableView.rowHeight = ConstantsLeagues.Table.rowHeight
+        tableView.rowHeight = Constants.Leagues.rowHeight
         presenter?.loadData()
     }
     
@@ -62,8 +62,9 @@ extension LeaguesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ConstantsLeagues.Cell.cellIdentifier, for: indexPath) as? LeagueTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Leagues.cellIdentifier, for: indexPath) as? LeagueTableViewCell
         cell?.configure(model: leagues[indexPath.row])
+        cell?.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 1, right: 0)
         return cell ?? UITableViewCell()
     }
 }

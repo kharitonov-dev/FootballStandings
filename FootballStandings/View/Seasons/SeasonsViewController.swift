@@ -19,7 +19,7 @@ class SeasonsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        tableView.register(SeasonTableViewCell.self, forCellReuseIdentifier: "SeasonCell")
+        tableView.register(SeasonTableViewCell.self, forCellReuseIdentifier: Constants.Seasons.cellIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -27,10 +27,10 @@ class SeasonsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Seasons"
+        title = Constants.Seasons.title
         addSubviews()
         makeConstraints()
-        tableView.rowHeight = 70
+        tableView.rowHeight = Constants.Seasons.rowHeight
         
         guard let league = league else {
             return
@@ -66,8 +66,9 @@ extension SeasonsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SeasonCell", for: indexPath) as? SeasonTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Seasons.cellIdentifier, for: indexPath) as? SeasonTableViewCell
         cell?.configure(model: seasons[indexPath.row])
+        cell?.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 1, right: 0)
         return cell ?? UITableViewCell()
     }
 }

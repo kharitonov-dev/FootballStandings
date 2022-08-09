@@ -23,7 +23,7 @@ class StandingsViewController: UIViewController {
         let tableView = UITableView()
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        tableView.register(StandingCell.self, forCellReuseIdentifier: "StandingCell")
+        tableView.register(StandingCell.self, forCellReuseIdentifier: Constants.Standings.cellIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -31,16 +31,16 @@ class StandingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Standings"
+        title = Constants.Standings.title
         addSubviews()
         makeConstraints()
-        tableView.rowHeight = 200
+        tableView.rowHeight = Constants.Standings.rowHeight
         
         guard let league = league else {
             return
         }
         presenter?.loadData(for: league, season: season)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Seasons", style: .plain, target: self, action: #selector(showSeasons))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Constants.Standings.btnTitleRightNavigation, style: .plain, target: self, action: #selector(showSeasons))
     }
     
     @objc private func showSeasons() {
@@ -54,7 +54,7 @@ class StandingsViewController: UIViewController {
         self.view.addSubview(picker)
                 
         toolBar = UIToolbar(frame: CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
-        toolBar.items = [UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))]
+        toolBar.items = [UIBarButtonItem.init(title: Constants.Standings.btnTitleToolBar, style: .done, target: self, action: #selector(onDoneButtonTapped))]
         self.view.addSubview(toolBar)
     }
     
@@ -91,8 +91,9 @@ extension StandingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StandingCell", for: indexPath) as? StandingCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Standings.cellIdentifier, for: indexPath) as? StandingCell
         cell?.configure(model: standings[indexPath.row])
+        cell?.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 1, right: 0)
         return cell ?? UITableViewCell()
     }
 }
