@@ -64,4 +64,9 @@ struct Constants {
         static let leftInset: CGFloat = 10
         static let statsSize = CGSize(width: 120, height: 100)
     }
+    
+    struct Stat {
+        static let leftInset: CGFloat = 10
+        static let rightInset: CGFloat = -10
+    }
 }

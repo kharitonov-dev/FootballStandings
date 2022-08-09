@@ -15,7 +15,7 @@ final class StatTableViewCell: UICollectionViewCell {
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = Constants.Fonts.secondaryFont
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         return label
@@ -23,7 +23,7 @@ final class StatTableViewCell: UICollectionViewCell {
     
     private lazy var goalsLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24)
+        label.font = Constants.Fonts.bigTitleFont
         return label
     }()
     
@@ -57,8 +57,8 @@ final class StatTableViewCell: UICollectionViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         let constraints = [
-            stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-            stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
+            stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.Stat.leftInset),
+            stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: Constants.Stat.rightInset),
             stackView.heightAnchor.constraint(equalTo: heightAnchor)
         ]
             
